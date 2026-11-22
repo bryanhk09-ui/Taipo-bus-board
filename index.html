@@ -5,43 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tai Po Bus Board</title>
 <style>
-:root{--bg:#0b0d10;--card:#161a20;--tx:#f2f4f7;--mut:#8b94a1;--acc:#ffb81c;--ok:#4ade80;--warn:#f87171}
+:root{--fs:1;--bg:#0b0d10;--card:#161a20;--tx:#f2f4f7;--mut:#8b94a1;--acc:#ffb81c;--ok:#4ade80;--warn:#f87171}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,"Segoe UI","Noto Sans TC",Roboto,sans-serif;overflow:hidden}
 body{display:flex;flex-direction:column;padding:2vmin;gap:1.6vmin;user-select:none;-webkit-user-select:none}
 header{display:flex;align-items:center;gap:2vmin;flex:0 0 auto}
 .hl{display:flex;align-items:baseline;gap:2vmin;min-width:0}
-#clock{font-size:7.5vmin;font-weight:700;letter-spacing:.02em;line-height:1}
-#date{color:var(--mut);font-size:2.8vmin}
+#clock{font-size:calc(7.5vmin*var(--fs));font-weight:700;letter-spacing:.02em;line-height:1}
+#date{color:var(--mut);font-size:calc(2.8vmin*var(--fs))}
 .rt{margin-left:auto;display:flex;align-items:center;gap:2vmin;flex-wrap:wrap;justify-content:flex-end}
-#temp{display:none;text-align:right;font-size:4.4vmin;font-weight:700;line-height:1}
-#temp small{display:block;font-size:1.9vmin;color:var(--mut);font-weight:400;margin-top:.4vmin}
+#temp{display:none;text-align:right;font-size:calc(4.4vmin*var(--fs));font-weight:700;line-height:1}
+#temp small{display:block;font-size:calc(1.9vmin*var(--fs));color:var(--mut);font-weight:400;margin-top:.4vmin}
 #alert{display:none;gap:1.2vmin;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-#gear{background:none;border:0;color:var(--mut);font-size:3.6vmin;padding:.6vmin;margin-left:1vmin}
-.wi{height:6vmin;width:auto}
-.wb{display:flex;align-items:center;gap:.8vmin;border-radius:1.2vmin;padding:.6vmin 1.4vmin;color:#fff;font-weight:800;font-size:2.4vmin;background:#555}
-.wb i{font-style:normal;font-size:3.4vmin}
+#gear{background:none;border:0;color:var(--mut);font-size:calc(3.6vmin*var(--fs));padding:.6vmin;margin-left:1vmin}
+.wi{height:calc(6vmin*var(--fs));width:auto}
+.wb{display:flex;align-items:center;gap:.8vmin;border-radius:1.2vmin;padding:.6vmin 1.4vmin;color:#fff;font-weight:800;font-size:calc(2.4vmin*var(--fs));background:#555}
+.wb i{font-style:normal;font-size:calc(3.4vmin*var(--fs))}
 .wb.y{background:#a16207}.wb.a{background:#b45309}.wb.r{background:#b91c1c}.wb.k{background:#000;border:1px solid #666}.wb.t{background:#1d4ed8}
 main{flex:1 1 0;display:grid;gap:1.6vmin;min-height:0;grid-auto-rows:minmax(0,1fr)}
 .card{background:var(--card);border-radius:2.2vmin;padding:1.8vmin 2vmin;display:flex;flex-direction:column;min-height:0;min-width:0;overflow:hidden}
 .top{display:flex;align-items:center;gap:1.2vmin}
-.route{font-size:7vmin;font-weight:800;color:var(--acc);line-height:1}
-.op{font-size:1.8vmin;font-weight:800;padding:.3vmin 1vmin;border-radius:.8vmin;color:#fff}
+.route{font-size:calc(7vmin*var(--fs));font-weight:800;color:var(--acc);line-height:1}
+.op{font-size:calc(1.8vmin*var(--fs));font-weight:800;padding:.3vmin 1vmin;border-radius:.8vmin;color:#fff}
 .op.KMB{background:#c8102e}.op.CTB{background:#f4c20d;color:#000}.op.GMB{background:#15803d}.op.SUN{background:#f59e0b;color:#000}
-.dest{font-size:2.5vmin;margin-top:.8vmin;line-height:1.15}
-.stop{font-size:1.9vmin;color:var(--mut);margin-top:.3vmin;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dest{font-size:calc(2.5vmin*var(--fs));margin-top:.8vmin;line-height:1.15}
+.stop{font-size:calc(1.9vmin*var(--fs));color:var(--mut);margin-top:.3vmin;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .etas{margin-top:auto;padding-top:.8vmin}
-.eta1{font-size:8vmin;font-weight:800;color:var(--ok);line-height:1.05;white-space:nowrap}
-.eta1 small{font-size:3vmin;font-weight:600}
-.eta2{font-size:2.8vmin;font-weight:600;color:var(--tx)}
-.none{font-size:3.4vmin;color:var(--mut)}
-footer{flex:0 0 auto;text-align:center;color:var(--mut);font-size:1.9vmin}
+.eta1{font-size:calc(8vmin*var(--fs));font-weight:800;color:var(--ok);line-height:1.05;white-space:nowrap}
+.eta1 small{font-size:calc(3vmin*var(--fs));font-weight:600}
+.eta2{font-size:calc(2.8vmin*var(--fs));font-weight:600;color:var(--tx)}
+.none{font-size:calc(3.4vmin*var(--fs));color:var(--mut)}
+footer{flex:0 0 auto;text-align:center;color:var(--mut);font-size:calc(1.9vmin*var(--fs))}
 footer.err{color:var(--warn)}
 #setup{position:fixed;inset:0;background:var(--bg);padding:4vmin;overflow:auto;display:none;z-index:10}
 #setup h2{margin-top:0}
 #setup label{display:block;margin:2vmin 0 .5vmin;color:var(--mut)}
 #setup select,#setup button{font-size:max(16px,2.6vmin);padding:1.5vmin;width:100%;max-width:700px;border-radius:1vmin;border:1px solid #333;background:var(--card);color:var(--tx)}
 #setup button{background:var(--acc);color:#000;font-weight:700;margin-top:3vmin;border:0}
+main.wide .card{flex-direction:row;align-items:center;gap:1.6vmin}
+main.wide .info{flex:1 1 auto;min-width:0}
+main.wide .etas{margin-top:0;padding-top:0;text-align:right;flex:0 0 auto}
+#fsb{display:flex;gap:1.2vmin;max-width:700px}
+#fsb button{flex:1;margin-top:0;background:var(--card);color:var(--tx);border:1px solid #444;font-weight:700}
+#fsb button.on{background:var(--acc);color:#000;border-color:var(--acc)}
+#setup #close{background:var(--card);color:var(--tx);border:1px solid #444;margin-top:1.6vmin;display:none}
+#setup .hint{color:var(--mut);font-size:max(13px,1.9vmin);margin:.8vmin 0 0}
 </style>
 </head>
 <body>
@@ -54,6 +62,11 @@ footer.err{color:var(--warn)}
 <footer id="foot">Loading…</footer>
 <div id="setup">
   <h2>Setup</h2>
+  <label>Text size</label>
+  <div id="fsb"><button data-s="S">S</button><button data-s="M">M</button><button data-s="L">L</button></div>
+  <div style="color:var(--mut);margin-top:1vmin;font-size:max(13px,2vmin)">L is the largest size that fits your screen; M and S are smaller.</div>
+  <p class="hint">Applies straight away. If a size won't fit your screen, the board shrinks the text automatically.</p>
+  <button id="close">View board</button>
   <p id="setupMsg" style="color:var(--mut)">Looking up routes…</p>
   <div id="slots"></div>
   <button id="save">Save and start</button>
@@ -67,7 +80,10 @@ const WANT = [
   { route: "25K",  gmb: 1, dest: /TAI PO MARKET/i, hints: [/lam kam.*san tsuen/i, /san tsuen/i, /lam kam/i] },
   { route: "25K",  gmb: 1, dest: /LAM TSUEN|PAK NGAU/i, hints: [/tai wo shopping/i, /po nga/i] },
   { route: "E41",  op: "KMB", dest: /SKY|AIRPORT/i,   hints: [/civic|cultural/i] },
-  { route: "A47X", op: "KMB", dest: /AIRPORT|HZMB|BRIDGE|ZHUHAI/i, hints: [/tai po centre/i, /terminus/i] }
+  { route: "A47X", op: "KMB", dest: /AIRPORT|HZMB|BRIDGE|ZHUHAI/i, hints: [/tai po centre/i, /terminus/i] },
+  // return trips (boarding at the airport end, heading back to Tai Po)
+  { route: "E41",  op: "KMB", dest: /TAI PO/i, hints: [/sky ?city/i, /terminus/i] },
+  { route: "A47X", op: "KMB", dest: /TAI PO|TAI WO/i, hints: [/ground transport|gtc/i, /airport/i] }
 ];
 const $ = id => document.getElementById(id);
 let cfg = null;
@@ -76,6 +92,27 @@ let cfg = null;
 const WK = ["06:35", "07:00", "07:20", "07:25", "07:30", "07:40", "07:50", "08:00"], SAT = ["07:15", "07:30", "07:50"];
 const STATIC = [{ route: "NR918", op: "SUN", label: "To Wan Chai (residents' service)", name: "Lam Kam Road, Lam Tsuen · timetable, not live", sched: [[], WK, WK, WK, WK, WK, SAT] }];
 const lines = () => (cfg || []).concat(STATIC);
+
+// ---- Text size (S / M / L) with automatic fit ----
+const FS = { S: 0.7, M: 0.85, L: 1 };  // fractions of the largest size that fits the screen
+let fsKey = "M"; try { fsKey = localStorage.getItem("tpFs") || "M"; } catch (e) {}
+function fit() {
+  const root = document.documentElement, hd = document.querySelector("header");
+  const over = k => {
+    root.style.setProperty("--fs", k);
+    return Array.prototype.some.call(document.querySelectorAll(".card"), el => el.scrollHeight > el.clientHeight + 2 || el.scrollWidth > el.clientWidth + 2) || hd.scrollWidth > hd.clientWidth + 2 || hd.offsetHeight > window.innerHeight * 0.22;
+  };
+  let lo = 0.4, hi = 2.2;                       // find the largest scale that fits
+  for (let i = 0; i < 8; i++) { const mid = (lo + hi) / 2; if (over(mid)) hi = mid; else lo = mid; }
+  let k = Math.max(0.4, Math.floor(lo * (FS[fsKey] || 0.85) * 20) / 20);
+  for (let i = 0; i < 10 && k > 0.4 && over(k); i++) k = Math.round((k - 0.05) * 100) / 100;   // safety check
+  root.style.setProperty("--fs", k);
+}
+function markFs() { Array.prototype.forEach.call(document.querySelectorAll("#fsb button"), b => b.classList.toggle("on", b.dataset.s === fsKey)); }
+Array.prototype.forEach.call(document.querySelectorAll("#fsb button"), b => { b.onclick = () => { fsKey = b.dataset.s; try { localStorage.setItem("tpFs", fsKey); } catch (e) {} markFs(); fit(); }; });
+$("close").onclick = () => { $("setup").style.display = "none"; fit(); };
+markFs();
+
 function sunHtml(c) {
   const h = new Date(Date.now() + 288e5), day = h.getUTCDay(), mins = h.getUTCHours() * 60 + h.getUTCMinutes();
   const toM = x => +x.slice(0, 2) * 60 + +x.slice(3);
@@ -129,6 +166,7 @@ async function resolve(w) {
 
 async function openSetup() {
   $("setup").style.display = "block";
+  $("close").style.display = (cfg && cfg.length) ? "block" : "none";
   const box = $("slots"); box.innerHTML = ""; window._slots = [];
   $("setupMsg").textContent = "Looking up your routes…";
   const notes = [];
@@ -165,16 +203,17 @@ $("save").onclick = () => {
   }
   if (!out.length) { $("setupMsg").textContent = "Pick a stop for at least one route first."; return; }
   cfg = out; try { localStorage.setItem("tpCfg2", JSON.stringify(cfg)); } catch (e) {}
-  $("setup").style.display = "none"; draw(); refresh();
+  $("setup").style.display = "none"; draw(); refresh(); fit();
 };
 $("gear").onclick = openSetup;
 
 function draw() {
-  const n = lines().length, land = window.innerWidth > window.innerHeight;
-  $("board").style.gridTemplateColumns = "repeat(" + (land ? Math.ceil(n / 2) : 2) + ",minmax(0,1fr))";
-  $("board").innerHTML = lines().map((c, i) => `<section class="card"><div class="top"><div class="route">${c.route}</div><div class="op ${c.op}">${c.op}</div></div><div class="dest">${c.label}</div><div class="stop">${c.name}</div><div class="etas" id="e${i}"><div class="none">…</div></div></section>`).join("");
+  const n = lines().length, w = window.innerWidth, land = w > window.innerHeight, wide = n > 6 && w >= 600;
+  $("board").className = wide ? "wide" : "";
+  $("board").style.gridTemplateColumns = "repeat(" + (land ? (wide ? 3 : Math.ceil(n / 2)) : 2) + ",minmax(0,1fr))";
+  $("board").innerHTML = lines().map((c, i) => `<section class="card"><div class="info"><div class="top"><div class="route">${c.route}</div><div class="op ${c.op}">${c.op}</div></div><div class="dest">${c.label}</div><div class="stop">${c.name}</div></div><div class="etas" id="e${i}"><div class="none">…</div></div></section>`).join("");
 }
-window.addEventListener("resize", () => { if (lines().length) { draw(); refresh(); } });
+window.addEventListener("resize", () => { if (lines().length) { draw(); refresh(); } fit(); });
 
 async function etaMins(c) {
   const now = Date.now(), m = c.meta;
@@ -195,6 +234,7 @@ async function refresh() {
         : `<div class="none">No scheduled bus</div>`;
     } catch (e) { bad = true; }
   }));
+  fit();
   $("foot").className = bad ? "err" : "";
   $("foot").textContent = bad ? "Some lines couldn't update, retrying…" : "KMB/LWB · GMB · NR918 timetable · updated " + new Date().toLocaleTimeString("en-HK", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
 }
@@ -242,8 +282,12 @@ async function loadWx() {
     const list = Object.keys(j).map(k => j[k]).filter(w => w && w.name && w.actionCode !== "CANCEL");
     $("alert").innerHTML = list.map(warnBadge).join(""); $("alert").style.display = list.length ? "flex" : "none";
   } catch (e) {}
+  fit();
+  fit();
 }
 loadWx(); setInterval(loadWx, 900000);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+window.addEventListener("load", fit);
 
 try { if ("wakeLock" in navigator) { const wl = () => navigator.wakeLock.request("screen").catch(() => {}); wl(); document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && wl()); } } catch (e) {}
 
